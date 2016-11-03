@@ -1,0 +1,24 @@
+{
+  "name": "angular-filemanager-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "byte-sdk": "git+https://github.com/Farcek/bytesdk-nodejs.git#cc51f633e86d989c207c6dc60b10ab7b160a9785",
+    "express": "^4.13.4",
+    "express-validator": "^2.20.5",
+    "extend": "^3.0.0",
+    "jsonwebtoken": "^7.1.6",
+    "morgan": "^1.7.0",
+    "multer": "^1.2.0",
+    "node-schedule": "^1.2.0",
+    "swig": "^1.4.2",
+    "tsrouter": "git+https://github.com/Farcek/tsrouter.git#25f8fb8bb8df52f35804f24bea47ce832565db85"
+  }
+}

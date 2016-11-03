@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "removeComments": true,
+    "declaration": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "dist",
+    "module": "commonjs"
+  },
+  "files": [
+    "typings/index.d.ts",
+    "src/main.ts"
+  ]
+}
