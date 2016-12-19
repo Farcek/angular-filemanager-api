@@ -6,6 +6,8 @@ var request = require('request');
 
 import * as IInterface from "./interface";
 
+
+
 export interface IGetListResult {
     name: string,
     rights: string,
@@ -219,15 +221,14 @@ export function editUrl(path: string, content: string): Promise<IBaseResult> {
 
         fs.readFile(path, 'utf8', function (err, data) {
             if (err) {
-                reject(err);
+                return reject(err);
             }
-            var result = data.replace(data, content);
-            fs.writeFile(path, result, 'utf8', function (err) {
+            
+            fs.writeFile(path, content, 'utf8', function (err) {
                 if (err) { reject(err); }
                 else { resolve(); }
             });
         });
-
     })
         .then(() => {
             return {

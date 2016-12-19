@@ -194,10 +194,9 @@ function editUrl(path, content) {
     return new $Promise((resolve, reject) => {
         fs.readFile(path, 'utf8', function (err, data) {
             if (err) {
-                reject(err);
+                return reject(err);
             }
-            var result = data.replace(data, content);
-            fs.writeFile(path, result, 'utf8', function (err) {
+            fs.writeFile(path, content, 'utf8', function (err) {
                 if (err) {
                     reject(err);
                 }

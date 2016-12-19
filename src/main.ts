@@ -6,13 +6,13 @@ import * as IList from "./api/list";
 import * as IFile from "./api/file";
 import * as IFolder from "./api/folder";
 
-export function factory(option: IInterface.IOption): any {
+export function factory(option: IInterface.IOption): express.Router {
     var root = express.Router();
     root.use((req: IInterface.IMyRequest, res, next) => {
         req.myOption = option;
         next();
     });
-    
+
     root.post("/list", bodyParser.json(), IList.router);
     root.post("/rename", bodyParser.json(), IFile.rename);
     root.post("/copy", bodyParser.json(), IFile.copy);

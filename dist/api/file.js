@@ -83,8 +83,7 @@ exports.upload = upload;
 function download(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         let fullpath = IInterface.resolvePath(req.myOption, req.query.path);
-        var result = yield IHelper.download(fullpath, req.query.path);
-        res.json(result);
+        res.sendFile(fullpath);
     });
 }
 exports.download = download;

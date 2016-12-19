@@ -127,7 +127,5 @@ export async function upload(req: IUploadRequest, res: express.Response) {
 }
 export async function download(req: IDownloadRequest, res: express.Response) {
     let fullpath = IInterface.resolvePath(req.myOption, req.query.path);
-    var result = await IHelper.download(fullpath, req.query.path);
-    // res.json({ "result": result });
-    res.json(result);
+    res.sendFile(fullpath);
 }
