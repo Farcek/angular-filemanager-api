@@ -1,9 +1,7 @@
 "use strict";
 const fs = require('fs');
-const http = require('http');
 const $Promise = require('bluebird');
 const path_1 = require("path");
-var request = require('request');
 const IInterface = require("./interface");
 function getList(path) {
     return new Promise((resolve, reject) => {
@@ -238,23 +236,3 @@ function getContent(path) {
     });
 }
 exports.getContent = getContent;
-function download(path, filename) {
-    return new $Promise((resolve, reject) => {
-        var download = function (path, filename, callback) {
-            console.log('PATH', path);
-            console.log('NAME', filename);
-            var file = fs.createWriteStream(path);
-            var request = http.get(path, function (response) {
-                response.pipe(file);
-                file.on('finish', function () {
-                    resolve();
-                });
-            });
-        };
-        download(path, filename, function () {
-            console.log('done');
-            return 'downloaded';
-        });
-    });
-}
-exports.download = download;

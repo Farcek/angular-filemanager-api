@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as http from 'http';
 import * as $Promise from 'bluebird';
 import { join } from "path";
-var request = require('request');
+
 
 import * as IInterface from "./interface";
 
@@ -259,26 +259,4 @@ export function getContent(path: string): Promise<string> {
         .then(() => {
             return content;
         })
-}
-
-export function download(path: string, filename: string): Promise<any> {
-    return new $Promise((resolve, reject) => {
-        var download = function (path, filename, callback) {
-
-            console.log('PATH', path);
-            console.log('NAME', filename);
-            var file = fs.createWriteStream(path);
-            var request = http.get(path, function (response) {
-                response.pipe(file);
-                file.on('finish', function () {
-                    resolve();
-                });
-            });
-        };
-
-        download(path, filename, function () {
-            console.log('done');
-            return 'downloaded';
-        });
-    })
 }

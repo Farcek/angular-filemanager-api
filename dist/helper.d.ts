@@ -17,4 +17,3 @@ export declare function removeUrl(oldpaths: string[], rootUrl: any): Promise<IBa
 export declare function createFolder(newpath: string): Promise<IBaseResult>;
 export declare function editUrl(path: string, content: string): Promise<IBaseResult>;
 export declare function getContent(path: string): Promise<string>;
-export declare function download(path: string, filename: string): Promise<any>;
